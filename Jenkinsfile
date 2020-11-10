@@ -60,9 +60,11 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'Last step'
+        sh '''git status
+git log'''
       }
     }
 
