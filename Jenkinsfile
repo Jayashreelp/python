@@ -26,8 +26,19 @@ pipeline {
     }
 
     stage('NewStage4') {
-      steps {
-        echo 'Sample'
+      parallel {
+        stage('NewStage4') {
+          steps {
+            echo 'Sample'
+          }
+        }
+
+        stage('NewStater5') {
+          steps {
+            sh 'echo "This is good"'
+          }
+        }
+
       }
     }
 
