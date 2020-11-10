@@ -15,6 +15,12 @@ pipeline {
             sh 'exit 121'
           }
         }
+        
+         stage('Stage3') {
+          steps {
+            sh 'exit 0'
+          }
+        }
 
       }
     }
