@@ -12,7 +12,7 @@ pipeline {
 
         stage('Stage2') {
           steps {
-            sh 'exit 121'
+            sh 'echo Test'
           }
         }
 
@@ -39,6 +39,30 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Final Stage') {
+      parallel {
+        stage('Final Stage') {
+          steps {
+            echo 'Smaple message'
+            echo 'New Message'
+          }
+        }
+
+        stage('Mark stage') {
+          steps {
+            echo 'Somthing'
+          }
+        }
+
+      }
+    }
+
+    stage('') {
+      steps {
+        echo 'Last step'
       }
     }
 
