@@ -15,13 +15,19 @@ pipeline {
             sh 'exit 121'
           }
         }
-        
-         stage('Stage3') {
+
+        stage('Stage3') {
           steps {
             sh 'exit 0'
           }
         }
 
+      }
+    }
+
+    stage('NewStage4') {
+      steps {
+        echo 'Sample'
       }
     }
 
